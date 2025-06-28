@@ -45,3 +45,23 @@ declare global {
     };
   }
 }
+
+// Telegram Bot API Types
+export interface TelegramApiResponse {
+  ok: boolean;
+  description?: string;
+  result?: unknown;
+}
+
+export interface SendMessageParams {
+  chatId: number;
+  text: string;
+  parseMode?: "HTML" | "Markdown" | "MarkdownV2";
+}
+
+export interface MessageData {
+  action: string;
+  target_user_id?: number;
+  message?: string;
+  [key: string]: unknown;
+}

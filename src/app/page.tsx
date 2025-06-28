@@ -1,33 +1,23 @@
 "use client";
 
 import { useTelegramWebApp } from "../hooks/useTelegramWebApp";
-import { useTelegramMessaging } from "../hooks/useTelegramMessaging";
 import {
   UserProfile,
-  MessageButton,
-  StatusMessage,
   LoadingPlaceholder,
 } from "../components/TelegramComponents";
-
-const TARGET_USER_ID = 5578535701;
-const MESSAGE_TEXT = "Hello! This is a message from the Telegram WebApp.";
+import { BurgerProducts } from "../components/BurgerProducts";
 
 export default function Home() {
   const { user, isReady, isAvailable } = useTelegramWebApp();
-  const { sendMessage, messageSent, isLoading, error } = useTelegramMessaging();
-
-  const handleSendMessage = () => {
-    sendMessage(TARGET_USER_ID, MESSAGE_TEXT);
-  };
 
   const isUserDataAvailable = user && isReady && isAvailable;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="grid grid-rows-[1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-        <main className="flex flex-col gap-8 row-start-1 items-center justify-center w-full max-w-md mx-auto">
+      <div className="grid grid-rows-[1fr_auto] items-center justify-items-center min-h-screen p-4 pb-20 gap-8 sm:p-8">
+        <main className="flex flex-col gap-8 row-start-1 items-center justify-center w-full max-w-6xl mx-auto">
           {/* User Profile Section */}
-          <div className="w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-gray-100 mx-auto">
             {isUserDataAvailable ? (
               <UserProfile user={user} />
             ) : (
@@ -41,32 +31,15 @@ export default function Home() {
             )}
           </div>
 
-          {/* Action Section */}
+          {/* Burger Products Section */}
           {isUserDataAvailable && (
-            <div className="w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-              <div className="flex flex-col gap-6 items-center">
-                <div className="text-center">
-                  <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                    Send a Message
-                  </h2>
-                  <p className="text-sm text-gray-600">
-                    Click the button below to send a message via Telegram
-                  </p>
-                </div>
-
-                <MessageButton
-                  onClick={handleSendMessage}
-                  disabled={!isUserDataAvailable}
-                  isLoading={isLoading}
-                />
-
-                <StatusMessage messageSent={messageSent} error={error} />
-              </div>
+            <div className="w-full">
+              <BurgerProducts />
             </div>
           )}
 
           {/* App Info Section */}
-          <div className="w-full bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+          <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 border border-gray-100 mx-auto">
             <div className="text-center">
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 Telegram WebApp

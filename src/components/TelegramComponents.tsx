@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TelegramUser } from "../hooks/useTelegramWebApp";
+import { TelegramUser } from "../types/telegram";
 
 interface UserProfileProps {
   user: TelegramUser;
