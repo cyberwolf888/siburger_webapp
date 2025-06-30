@@ -128,17 +128,12 @@ export const BurgerProducts = () => {
 
 📅 Order Date: ${orderDate}
 👤 Customer: ${customerName}
-📱 Contact: ${customerContact}
-🆔 Telegram ID: ${user?.id || "N/A"}
 
 📦 ORDER DETAILS:
 ${itemsList}
 
 💰 TOTAL: ${formatRupiah(getTotalPrice())}
 📊 Total Items: ${getTotalItems()}
-
-🏪 Order placed via Burger WebApp
-⚡ Status: Pending Payment
 
 📞 Customer can be reached via Telegram: ${customerContact}`;
 

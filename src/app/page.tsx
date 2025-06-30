@@ -39,7 +39,7 @@ export default function Home() {
           )}
 
           {/* App Info Section */}
-          <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 border border-gray-100 mx-auto">
+          {/* <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 border border-gray-100 mx-auto">
             <div className="text-center">
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
                 Telegram WebApp
@@ -77,12 +77,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </main>
 
         {/* Footer */}
         <footer className="row-start-2 text-center text-xs text-gray-500">
-          <p>Powered by Telegram WebApp API</p>
+          <p>Powered by Orang Berbakat</p>
         </footer>
       </div>
     </div>
