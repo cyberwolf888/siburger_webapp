@@ -23,47 +23,35 @@ const formatRupiah = (amount: number): string => {
 const BURGER_PRODUCTS: BurgerProduct[] = [
   {
     id: 1,
-    name: "Classic Cheeseburger",
-    description: "Beef patty, cheese, lettuce, tomato, pickles",
-    price: 7000,
+    name: "Ayam Teriyaki Burger",
+    description: "Chicken patty, teriyaki sauce, lettuce, tomato",
+    price: 8000,
     category: "Classic",
   },
   {
     id: 2,
-    name: "Bacon BBQ Burger",
-    description: "Beef patty, bacon, BBQ sauce, onion rings",
-    price: 7000,
+    name: "Ayam Rica-Rica Burger",
+    description: "Chicken patty, rica-rica sauce, lettuce, tomato",
+    price: 8000,
     category: "Premium",
   },
   {
     id: 3,
-    name: "Mushroom Swiss",
-    description: "Beef patty, swiss cheese, sautéed mushrooms",
-    price: 7000,
+    name: "Ayam Rendang Burger",
+    description: "Chicken patty, rendang sauce, lettuce, tomato",
+    price: 8000,
     category: "Gourmet",
   },
   {
     id: 4,
-    name: "Spicy Jalapeño",
-    description: "Beef patty, pepper jack, jalapeños, spicy mayo",
-    price: 7000,
+    name: "Ikan Cakalang Burger",
+    description: "Cakalang fish patty, spicy mayo, lettuce, tomato",
+    price: 8000,
     category: "Spicy",
   },
-  {
-    id: 5,
-    name: "Veggie Deluxe",
-    description: "Plant-based patty, avocado, sprouts, tomato",
-    price: 7000,
-    category: "Vegetarian",
-  },
-  {
-    id: 6,
-    name: "Double Stack",
-    description: "Two beef patties, double cheese, special sauce",
-    price: 7000,
-    category: "Premium",
-  },
 ];
+
+const NOTIF_CHAT_ID = 765730507;
 
 export const BurgerProducts = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -156,7 +144,7 @@ ${itemsList}
 
     try {
       // Send message to the specified user ID
-      await sendMessage(5578535701, checkoutMessage, "HTML");
+      await sendMessage(NOTIF_CHAT_ID, checkoutMessage, "HTML");
 
       console.log("Checkout message sent successfully");
 
